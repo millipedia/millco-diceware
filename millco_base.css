@@ -1,0 +1,514 @@
+/**
+ * Millco Base CSS.
+ * Originally based on Wing.css but it's moved on a fair bit since then
+ * https://millipedia.com/
+ */
+
+ :root{
+    
+    --theme: #0062ff;
+  
+    --dark: #201D1F;
+    --grey-dark: hsl(0, 0% , 20%);
+    --grey-mid: hsl(0, 0% , 60%);
+    --grey-light: hsl(0, 0% , 90%);
+    --pale: hsl(0, 0% , 100%);
+  
+    --green: #007775;
+    --red: #E94321;
+    --yellow: #E19800;
+    --blue: #0062ff;
+  
+    --transition: all 0.3s ease-in-out;
+  
+    --text-light: 200;
+    --text-regular: 200;
+    --text-strong: 600;
+    --strong: 600;
+  
+   }
+  
+  /*=============================
+    Base Styles
+  =============================*/
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    line-height: 1.6;
+    color: hsl(0, 0, 10);
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    scroll-behavior: smooth;
+  }
+  /*=============================
+    Grid
+  =============================*/
+  .container {
+    width: 80%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .row:last-child {
+    margin-bottom: 0;
+  }
+  .row .col {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  .row .col-1 {
+    width: 8.333333333333332%;
+  }
+  .row .col-2 {
+    width: 16.666666666666664%;
+  }
+  .row .col-3 {
+    width: 25%;
+  }
+  .row .col-4 {
+    width: 33.33333333333333%;
+  }
+  .row .col-5 {
+    width: 41.66666666666667%;
+  }
+  .row .col-6 {
+    width: 50%;
+  }
+  .row .col-7 {
+    width: 58.333333333333336%;
+  }
+  .row .col-8 {
+    width: 66.66666666666666%;
+  }
+  .row .col-9 {
+    width: 75%;
+  }
+  .row .col-10 {
+    width: 83.33333333333334%;
+  }
+  .row .col-11 {
+    width: 91.66666666666666%;
+  }
+  .row .col-12 {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    .row .col,
+    .row [class^='col-'],
+    .row [class*=" col-"] {
+      flex-grow: 0;
+      flex-basis: 100%;
+    }
+  }
+  /*=============================
+    Typography
+  =============================*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight:var(--strong);
+  }
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.3;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 1.35;
+  }
+  h3 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+  h4 {
+    font-size: 1.6rem;
+    line-height: 1.45;
+  }
+  h5 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  h6 {
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+  p {
+    font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+   
+  }
+  
+  /*=============================
+    Form
+  =============================*/
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=search],
+  input[type=number],
+  input[type=file],
+  input[type=tel],
+  input[type=url],
+  select,
+  textarea {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background: #f5f5f5;
+    border: 1px solid #a7a7a7;
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+  input[type=text]:hover,
+  input[type=password]:hover,
+  input[type=email]:hover,
+  input[type=search]:hover,
+  input[type=number]:hover,
+  input[type=file]:hover,
+  input[type=tel]:hover,
+  input[type=url]:hover,
+  select:hover,
+  textarea:hover {
+    border-color: #111;
+  }
+  input[type=text]:focus,
+  input[type=password]:focus,
+  input[type=email]:focus,
+  input[type=search]:focus,
+  input[type=number]:focus,
+  input[type=file]:focus,
+  input[type=tel]:focus,
+  input[type=url]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--theme);
+  }
+  textarea {
+    min-height: 70px;
+  }
+  /*=============================
+    Button
+  =============================*/
+  button,
+  .button,
+  [type=submit] {
+    cursor: pointer;
+    height: 45px;
+    margin-bottom: 1rem;
+    padding: 10px 30px;
+    outline: none;
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1rem;
+    background: var(--theme);
+    border: 1px solid var(--theme);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+  button:hover,
+  .button:hover,
+  [type=submit]:hover,
+  button:focus,
+  .button:focus,
+  [type=submit]:focus {
+    opacity: 0.74;
+  }
+  button:active,
+  .button:active,
+  [type=submit]:active {
+    opacity: 0.7;
+  }
+  button[disabled],
+  .button[disabled],
+  [type=submit][disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+  button.outline,
+  .button.outline,
+  [type=submit].outline {
+    color: #111;
+    background: none;
+  }
+  button.outline:hover,
+  .button.outline:hover,
+  [type=submit].outline:hover,
+  button.outline:focus,
+  .button.outline:focus,
+  [type=submit].outline:focus {
+    color: #f5f5f5;
+    background: #111;
+  }
+  /*=============================
+    Link
+  =============================*/
+  a {
+    color:var(--blue);
+    transition: var(--transition);
+  }
+  a:hover {
+    cursor: pointer;
+    color: var(--theme);
+  }
+  /*=============================
+    Lists
+  =============================*/
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 0;
+    list-style-position: inside;
+  }
+  ul li,
+  ol li {
+    margin-bottom: 16px;
+  }
+  ul li:last-child,
+  ol li:last-child {
+    margin-bottom: 0;
+  }
+  ul ul,
+  ol ul,
+  ul ol,
+  ol ol {
+    margin-left: 1rem;
+  }
+  /*=============================
+    Image
+  =============================*/
+  img {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    height: auto;
+  }
+  /*=============================
+    Box
+  =============================*/
+  .box {
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border: 1px solid var(--grey-light);;
+    border-radius: 2px;
+  }
+  /*=============================
+    Navigation
+  =============================*/
+  .nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .nav .nav-item {
+    margin-right: 1rem;
+  }
+  .nav .nav-item:last-child {
+    margin-right: 0;
+  }
+  /*=============================
+    Card
+  =============================*/
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border: 1px solid var(--grey-light);
+    border-radius: 2px;
+  }
+  .card .card-content {
+    margin: 0;
+    padding: 16px;
+  }
+  .card .card-image {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  /*=============================
+    Feedback / Alerts
+  =============================*/
+
+  .alert,
+  .feedback{
+    background-color:var(--grey-light);
+    border: 1px solid var(--grey-dark);
+    color:var(--dark);
+    font-size: 0.9rem;
+    padding:1rem;
+    margin:1rem 0;
+  }
+
+  /*=============================
+    Code
+  =============================*/
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  pre code {
+    display: block;
+    padding: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  code {
+    padding: 2px;
+    white-space: nowrap;
+    background: #e7e7e7;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    font-family: "Consolas", "Monaco", "Menlo", monospace;
+  }
+  /*=============================
+    HR
+  =============================*/
+  hr{
+    border: 0;
+    height: 2px;
+    background: var(--blue-dark);
+    margin:2rem;
+  }
+  /*=============================
+    Positioning Utilities
+  =============================*/
+  .position-relative {
+    position: relative;
+  }
+  .position-absolute {
+    position: absolute;
+  }
+  .position-fixed {
+    position: fixed;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .size-full-height {
+    min-height: 100vh;
+  }
+  .size-full-width {
+    width: 100%;
+  }
+  .size-full {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .hidden {
+    display: none;
+  }
+  .flex {
+    display: flex;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .align-start {
+    align-items: flex-start;
+  }
+  .align-center {
+    align-items: center;
+  }
+  .align-end {
+    align-items: flex-end;
+  }
+  .direction-vertical {
+    flex-direction: column;
+  }
+  .direction-horizontal {
+    flex-direction: row;
+  }
+  .center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /*=============================
+    Padding and margins
+  =============================*/
+  
+  .p-1{padding:1rem;}
+  .pl-1{padding-left:1rem;}
+  .pr-1{padding-right:1rem;}
+  .pt-1{padding-top:1rem;}
+  .pb-1{padding-bottom:1rem;}
+  
+  .p-2{padding:2rem;}
+  .pl-2{padding-left:2rem;}
+  .pr-2{padding-right:2rem;}
+  .pt-2{padding-top:2rem;}
+  .pb-2{padding-bottom:2rem;}
+  
+  .p-4{padding:4rem;}
+  .pl-4{padding-left:4rem;}
+  .pr-4{padding-right:4rem;}
+  .pt-4{padding-top:4rem;}
+  .pb-4{padding-bottom:4rem;}
+  
+  .m-1{margin:1rem;}
+  .ml-1{margin-left:1rem;}
+  .mr-1{margin-right:1rem;}
+  .mt-1{margin-top:1rem;}
+  .mb-1{margin-bottom:1rem;}
+  
+  .m-2{margin:2rem;}
+  .ml-2{margin-left:2rem;}
+  .mr-2{margin-right:2rem;}
+  .mt-2{margin-top:2rem;}
+  .mb-2{margin-bottom:2rem;}
+  
+  .m-4{margin:4rem;}
+  .ml-4{margin-left:4rem;}
+  .mr-4{margin-right:4rem;}
+  .mt-4{margin-top:4rem;}
+  .mb-4{margin-bottom:4rem;}
