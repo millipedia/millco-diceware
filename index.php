@@ -47,7 +47,7 @@
 
             <div class="alert">
             <p>I needed a big list of reasonable passwords that matched the password requirements for ProcessWire. It's probably not for you if you're a secret government agency but actually it's been very handy.</p>
-            <p>Obviously you shouldn't trust this if you're not hosting it yourself so <a href="https://millipedia.com/millco-diceware/">go and grab the code from GitHUb.</a></p>
+            <p>Obviously you shouldn't trust this if you're not hosting it yourself so <a href="https://github.com/millipedia/millco-diceware">go and grab the code from Github.</a></p>
             </div>
 
             <?php
