@@ -3,7 +3,7 @@ An opinionated tool to create pass phrases.
 
 I needed a list of passwords that matched the password requirements for ProcessWire when importing users from another CMS and didn't find anything suitable.
 
-It's probably not for you if you're a secret government agency but it's probably reasonable for most of us and it's come in handy on 
+It's probably not for you if you're a secret government agency but it's probably reasonable for most of us and it's come in handy.
 
 The word list was initially based on the medium and long word lists from  https://github.com/first20hours/google-10000-english along with word lists from other sources but has been tweaked to remove American brand names and any words that might not be suitable in a pass phase (let me know if you come across anything that should be taken out).
 
