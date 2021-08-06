@@ -5,7 +5,7 @@ I needed a list of passwords that matched the password requirements for ProcessW
 
 It's probably not for you if you're a secret government agency but it's probably reasonable for most of us and it's actaully been very handy.
 
-The word list is now based on the [EFF Diceware long word list](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases) together with additional words from 10,000 most common word list from https://github.com/first20hours/google-10000-english including placenames which aren't in the EFF list.
+The word list is now based on the [EFF Diceware long word list](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases) together with additional words from the medium and long word lists from https://github.com/first20hours/google-10000-english and additional placenames which aren't in the EFF list.
 
 I've then tidied up the the list to remove American brand names and any words that might not be suitable in a pass phase (let me know if you come across anything that should be taken out).
 
