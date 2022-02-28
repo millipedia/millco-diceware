@@ -47,8 +47,15 @@ for ($i = 0; $i < $required_entries; $i++) {
 
     $passphrase = implode("-", $pass);
 
-    // let's add a number (but not zero) and capital letter 
-    $passphrase .= '-' . rand(2, 9) .  chr(rand(65, 90));
+    // let's add a number (but not zero)
+    $passphrase .= '-' . rand(2, 9);
+    
+    //  and a capital letter (but not O or I)
+    $cromulent_letters = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+    $string_length=strlen($cromulent_letters);
+    $string_index=mt_rand(0, $string_length-1);
+    $passphrase .=  $cromulent_letters[$string_index];
+    
 
     // I can't believe this is ever practically going to happen but let's check we don't have this already...
     if(in_array($passphrase,$password_list)){
