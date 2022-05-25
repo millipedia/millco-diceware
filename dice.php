@@ -38,7 +38,11 @@ for ($i = 0; $i < $required_entries; $i++) {
     // generate a password
     while ($tick < $no_of_words_in_passphrase) {
 
-        $index = random_int(0, $no_of_words);
+        // hah - we need $no_of_words -1 cos count gives the number
+        // of items and not the index (obvs). We actually saw this error when
+        // trying to pick the last word in the list. 
+
+        $index = random_int(0, ($no_of_words-1)); 
         
         $pass[] = trim($words[$index]);
 
